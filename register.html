@@ -14,6 +14,8 @@
 								<p><input type="text" value="" id="password"/></p>
 								<p>请验证密码</p>
 								<p><input type="text" value="" id="repassword"/></p>
+								<p>请输入邀请码</p>
+								<p><input type="text" value="" id="invatation"/></p>
 																<button onClick="toregister()">注册！</button>
 										<p>温馨提示:请不要输常用密码，因为我能看得见你们的密码且这个网站并不安全（悲</p>
 							<script>
@@ -22,8 +24,9 @@
 																if(password===repassword&& password!=""&& name!="") {
 																				register()
 																}else {
+																alert("不符合注册规范捏")
 																				alert("提示：姓名密码不为空，两次密码一致")
-																				alert("不符合注册规范捏")																}
+																																				}
 												}
 												function register(){
         $.ajax({
@@ -34,7 +37,8 @@
             //data为要传递给后端的数据，使用JSON.stringify()转换为json格式
             data:JSON.stringify({
                     userId:   $("#userId").val(),
-                    password: $("#password").val()
+                    password: $("#password").val(),
+                    invitation:$("#invitation").val()
                 }),
             success:function (data){
             if(data.status==="accept") {

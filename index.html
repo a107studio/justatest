@@ -25,17 +25,19 @@
                     password: $("#password").val()
                 }),
             success:function (data){
-                alert("登录成功!")    
-                 window.location.href="https://a107studio.github.io/homepage.html"
+            if(data.status==="accept") {
+            				alert("登录成功!")  
+            				   window.location.href="https://a107studio.github.io/homepage.html"
+            }
+             if(data.status==="unaccept") {
+             				alert("密码错了捏")
+             }   
+             if(data.status==="nouser") {
+             				alert("先注册一个账号捏")
+             }
             },
             error:function () {
             				alert("未知错误（换个浏览器试试捏）")
-            },
-            password_error:function (){
-                alert("密码错了捏")
-            },
-            blank:function () {
-            				alert("先注册一个捏")
             }
         })
     }
@@ -43,7 +45,7 @@
 												
 						<div id="foot">
 										<p>没有账号？</p>
-                                    <a href="/justatest/register" target="_blank">戳这里注册！</a>
+                                    <a href="/justatest/register.html" target="_blank">戳这里注册！</a>
                                 </div>						
 				</body>
 </html>

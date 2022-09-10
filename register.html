@@ -46,8 +46,11 @@
             				alert("注册成功!")  
             }
              if(data.status==="unaccept") {
-             				alert("名字被占用")
-             }   
+             				alert("邀请码错了捏")
+             }
+             if(data.status==="haveuser") {
+             				alert("用户名被占用")
+             }
             },
             error:function () {
             				alert("未知错误（换个浏览器试试捏）")

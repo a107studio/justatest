@@ -24,6 +24,10 @@
                     userId:   $("#userId").val(),
                     password: $("#password").val()
                 }),
+xhrFields: {
+        withCredentials: true
+    },
+    crossDomain: true,
             success:function (data){
             if(data.status==="accept") {
             				alert("登录成功!")  

@@ -355,7 +355,7 @@
             dataType:"json",
             data:JSON.stringify({
                     userId:name[1]}),
-xhrFields: {
+                    xhrFields: {
         withCredentials: true
     },
     crossDomain: true,
@@ -368,10 +368,36 @@ xhrFields: {
             							window.location.href='/justatest'           				}
             },
              error:     function () {
-             				alert('error')
+             				window.location.href='/justatest'
              }    
 								})
-				}	
+								
+				}
+					function logout() {
+									var names=location.search.substr(1);
+								var name=names.split("=");
+								//alert(name[1]);
+								$.ajax({
+												url:"http://101.43.151.15:7777/logout",
+            type:"post",
+            dataType:"json",
+            data:JSON.stringify({
+                    userId:name[1]}),
+                    xhrFields: {
+        withCredentials: true
+    },
+    crossDomain: true,
+    success:    function (data) {
+    alert('感谢您的使用！')
+    window.location.href='/justatest'
+            				         				
+            },
+             error:     function () {
+             
+             				window.location.href='/justatest'
+             }
+								})
+					}	
 	</script>
 </body>
 </html>

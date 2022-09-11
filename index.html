@@ -27,7 +27,7 @@
             success:function (data){
             if(data.status==="accept") {
             				alert("登录成功!")  
-            				   window.location.href="https://a107studio.github.io/homepage.html"
+            				   window.location.href="https://a107studio.github.io/homepage.html?user="+userId
             }
              if(data.status==="unaccept") {
              				alert("密码错了捏")
@@ -45,7 +45,7 @@
 												
 						<div id="foot">
 										<p>没有账号？</p>
-                                    <a href="/justatest/register.html" target="_blank">戳这里注册！</a>
+                                    <a href="/register" target="_blank">戳这里注册！</a>
                                 </div>						
 				</body>
 </html>

@@ -134,9 +134,9 @@
 	<div id="top">
 		<div id="nav" class="animated flipInX">
 			<ul>
-				<a href="homepage.html"><li>首页</li></a>
-				<a href="academic-corner/index.html" target="_blank"><li>学术交流角</li></a>
+				<a href="" id="userlink"><li id="username"></li></a>
 				<a href="javascript:logout()"> 登出</a>
+				<a href="academic-corner/index.html" target="_blank"><li>学术交流角</li></a>
 				<a href="https://github.com/a107studio" target="_blank"><li>107Studio</li></a>
 			</ul>
 		</div>
@@ -346,8 +346,9 @@
 				function check() {
 								var names=location.search.substr(1);
 								var name=names.split("=");
-								alert(name[1])
-								
+								alert(name[1]);
+									document.getElementById("username").innerHTML=name[1];
+								document.getElementById("userlink").href='/justatest/homepage?user='+name[1]
 				}	
 	</script>
 </body>

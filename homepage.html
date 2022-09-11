@@ -348,7 +348,25 @@
 								var name=names.split("=");
 								//alert(name[1]);
 									document.getElementById("username").innerHTML=name[1];
-								document.getElementById("userlink").href='/justatest/homepage?user='+name[1];
+								document.getElementById("userlink").href='/justatest/homepage?user='+name[1]
+								$.ajax({
+												url:"http://101.43.151.15:7777/check",
+            type:"post",
+            dataType:"json",
+            data:JSON.stringify({
+                    userId:name[1]}),
+            success:    function (data) {
+            				if(data.status==='accept') {
+            								return
+            				}
+            				if(data.status==='unaccept') {
+            								alert('请登录')
+            							window.location.href='/justatest'           				}
+            },
+             error:     function () {
+             				alert('error')
+             }    
+								})
 				}	
 	</script>
 </body>

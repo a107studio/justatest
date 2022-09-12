@@ -356,6 +356,8 @@
             success:    function (data) {
             				if(data.status==='accept') {
             				var name=data.username
+alert(name)
+                                        document.getElementById("username").innerHTML=name;
             								return
             				}
             				if(data.status==='unaccept') {
@@ -368,7 +370,7 @@
              }    
 								})
 								document.getElementById("username").innerHTML=name;
-								document.getElementById("userlink").href='/justatest/homepage?user='+name;
+								document.getElementById("userlink").href='/justatest/homepage';
 								
 				}
 					function logout() {

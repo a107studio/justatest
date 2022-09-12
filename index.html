@@ -31,6 +31,8 @@ xhrFields: {
             success:function (data){
             if(data.status==="accept") {
             				alert("登录成功!")  
+                                        var customerId=sessionStorage
+                                        alert(customerId)
             				   window.location.href="/justatest/homepage.html?user="+data.userId
             }
              if(data.status==="unaccept") {
